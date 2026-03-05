@@ -1,5 +1,5 @@
 # This code imports the Flask library and some functions from it.
-from flask import Flask
+from flask import Flask, render_template	
 
 # Create a Flask application instance
 app = Flask(__name__)
@@ -12,16 +12,21 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     # This defines a variable 'studentName' that will be passed to the output HTML
-    studentName = "CHITTI"
+    studentName = "SHU Student"
     # Render HTML with the name in a H1 tag
-    return f"<h1>Hello, {studentName}!</h1>"
+    return render_template('index.html', title="hello shu", username=studentName)
 
 # About Page
 @app.route('/about')
 def about():
     # Render HTML with the name in a H1 tag
-    return f"<h1> PAVAN MEGAD!</h1><p> MSC COMPUTING WORK EXPERIENCE</p>"
+    return f"<h1>About Flask!</h1><p>It is easy to create new routes</p>"
 
+# About Name Page
+@app.route('/about/<name>')
+def aboutName(name):
+    # Render HTML with the name in a H1 tag
+    return f"<h1>About {name}!</h1><p>It is easy to create new routes</p>"
 
 
 # Run application
@@ -32,4 +37,6 @@ if __name__ == '__main__':
     print("Open Your Application in Your Browser: http://localhost:81")
     # The app will run on port 81, accessible from any local IP address
     app.run(host='0.0.0.0', port=81, debug=True)
+
+
 
