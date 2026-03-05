@@ -33,7 +33,12 @@ def about():
 def aboutName(name):
     # Render HTML with the name in a H1 tag
     return f"<h1>About {name}!</h1><p>It is easy to create new routes</p>"
-
+# About Name Page
+@app.route('/hallam/<name>')
+def hallam(name):
+    # Render HTML with the name in a H1 tag
+    return f"<h1>hallam {name}!</h1><p>It is easy to create new routes</p>"
+ 
 # Run application
 #=========================================================
 # This code executes when the script is run directly.
