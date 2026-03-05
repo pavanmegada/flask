@@ -26,14 +26,13 @@ def index():
 @app.route('/about')
 def about():
     # Render HTML with the name in a H1 tag
-    return f"<h1>About Flask!</h1><p>It is easy to create new routes</p>"
+    return render_template('about.html', title="About EFSSD")
 
 # About Name Page
 @app.route('/about/<name>')
 def aboutName(name):
     # Render HTML with the name in a H1 tag
     return f"<h1>About {name}!</h1><p>It is easy to create new routes</p>"
-
 
 # Run application
 #=========================================================
