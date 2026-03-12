@@ -38,6 +38,12 @@ def aboutName(name):
 def hallam(name):
     # Render HTML with the name in a H1 tag
     return f"<h1>hallam {name}!</h1><p>It is easy to create new routes</p>"
+
+# Register Page
+@app.route('/register/')
+def register():
+    return render_template('register.html', title="Register")
+
  
 # Run application
 #=========================================================
